@@ -28,8 +28,8 @@ headers = {
    # un peu de json pour envoyer des informations directement à l'API
    data = {
     "model" => "gpt-3.5-turbo-instruct",
-    "prompt" => "liste de 5 parfums de glace",
-    "max_tokens" => 50,
+    "prompt" => "donne-moi une recette de cuisine facile, je veux la liste des étapes de réalisation, mais pas de liste des ingrédients",
+    "max_tokens" => 200,
     "n" => 1, #  nombre de réponses différentes
     # "stop" => ["\n"], # point d'arrêt de la réponse
     "temperature" => 0.5 # de 0 cohérent à 1 créatif
@@ -43,5 +43,5 @@ headers = {
   response_string = response_body['choices'][0]['text'].strip
 
   # ligne qui permet d'envoyer l'information sur ton terminal
-  puts "Voici une liste de 5 parfums de glace :"
+  puts "Voici une recette de cuisine facile :"
   puts response_string
