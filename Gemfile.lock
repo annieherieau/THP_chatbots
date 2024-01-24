@@ -67,6 +67,7 @@ GEM
       parser (>= 3.2.1.0)
     ruby-progressbar (1.13.0)
     unicode-display_width (2.5.0)
+    x (0.14.1)
 
 PLATFORMS
   ruby
@@ -79,6 +80,7 @@ DEPENDENCIES
   pry
   rspec
   rubocop
+  x
 
 RUBY VERSION
    ruby 3.2.2p53
