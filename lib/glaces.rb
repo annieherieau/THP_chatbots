@@ -12,11 +12,9 @@ Dotenv.load # Ceci appelle le fichier .env qui contien toutes les clés API enre
 
 #______ keep the code above in each in project files lib/*.rb
 
-require_relative 'api_connexion.rb'
 
-#_________ EXEMPLE DE REQUETE
+#_________ CHATBOT GLACES
 
-def glaces
 # création de la clé d'api et indication de l'url utilisée.
 api_key = ENV["OPENAI_API_KEY"]
 url = ENV["OPENAI_URL"]
@@ -30,8 +28,8 @@ headers = {
    # un peu de json pour envoyer des informations directement à l'API
    data = {
     "model" => "gpt-3.5-turbo-instruct",
-    "prompt" => "recette de glace vanille exprès",
-    "max_tokens" => 10,
+    "prompt" => "liste de 5 parfums de glace",
+    "max_tokens" => 50,
     "n" => 1, #  nombre de réponses différentes
     # "stop" => ["\n"], # point d'arrêt de la réponse
     "temperature" => 0.5 # de 0 cohérent à 1 créatif
@@ -45,8 +43,5 @@ headers = {
   response_string = response_body['choices'][0]['text'].strip
 
   # ligne qui permet d'envoyer l'information sur ton terminal
-  puts "Voici recette de glace vanille exprès :"
+  puts "Voici une liste de 5 parfums de glace :"
   puts response_string
-end
-
-puts glaces
